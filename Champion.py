@@ -1,9 +1,8 @@
 class Champion:
 
     def __init__(self, name):
-        self.ap = 0
         self.name = name
+        self.ap = 0
+        #data = open("Ahri.txt", "r")
 
-    def printHello(self):
-        print("HELLOO")
 
