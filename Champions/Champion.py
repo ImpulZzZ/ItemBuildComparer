@@ -18,23 +18,12 @@ class Champion:
         self.flat_magic_penetration = 0
         self.ap = 0
         self.bonus_attack_speed = 0
+
         self.level = 1
+        self.max_level = 18
 
         self.item_amount = 0
         self.max_item_amount = 6
-
-        # Here the abilities are saved with their Base-Dmg and Scaling
-        # data = open("DATA/" + name + ".txt", "r").readlines()
-        # self.passive = data[0]
-        # self.passive_scaling = data[1]
-        # self.q = data[2]
-        # self.q_scaling = data[3]
-        # self.w = data[4]
-        # self.w_scaling = data[5]
-        # self.e = data[6]
-        # self.e_scaling = data[7]
-        # self.r = data[8]
-        # self.r_scaling = data[9]
 
         # Here the base-stats are read out of a data.txt
         basestats = open("DATA/Champions.txt", "r").readlines()
@@ -153,3 +142,4 @@ class Champion:
     def sell_all_items(self):
         for item in self.items:
             self.sell_item(item)
+
