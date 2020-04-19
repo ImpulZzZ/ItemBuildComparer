@@ -1,12 +1,8 @@
 from appJar import gui
 
-import Champions.Champion
-import Champions.Ahri
-import Champions.Akali
-import Champions.Anivia
-import Champions.Annie
-import Champions.AurelionSol
-import Champions.Azir
+from Champions import (Ahri, Akali, Anivia, Annie, AurelionSol, Azir, Brand, Cassiopeia, Diana, Ekko, Fizz, Galio,
+                       Heimerdinger, Kassadin, Katarina, LeBlanc, Lissandra, Lux, Malzahar, Neeko, Orianna, Ryze, Sylas,
+                       Syndra, TwistedFate, Veigar, VelKoz, Viktor, Vladimir, Xerath, Ziggs, Zilean, Zoe)
 
 
 def give_stats_gui(champions):
@@ -146,8 +142,7 @@ def create_first_gui():
                                     "Ziggs",
                                     "Zilean", "Zoe", "Zyra"]
 
-    ap_champions_for_auto_entry = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir"]
-    ap_champions_for_auto_entry_complete = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir", "Brand",
+    ap_champions_for_auto_entry = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir", "Brand",
                                    "Cassiopeia", "Diana", "Ekko", "Fizz", "Galio", "Heimerdinger",
                                    "Kassadin", "Katarina", "LeBlanc", "Lissandra", "Lux", "Malzahar", "Neeko",
                                    "Orianna", "Ryze", "Sylas", "Syndra", "TwistedFate", "Veigar", "Vel'Koz",
@@ -158,7 +153,11 @@ def create_first_gui():
         # whenever a champion is added, he gets a label and a Champion.x instance
         if button == "Add Champion":
             entry = app.getEntry("Champion")
-            instancing_code = "Champions." + entry + "." + entry + "()"
+            # For Champs like Vel'Koz or Kled&Skaarl
+            entry = entry.replace('\'', "")
+            entry = entry.replace("&", "")
+            #instancing_code = "Champions." + entry + "." + entry + "()"
+            instancing_code = entry + "." + entry + "()"
             champion = eval(instancing_code)
 
             # Tests if a Champion was found with the given name
