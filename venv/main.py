@@ -6,6 +6,7 @@ import Champions.Akali
 import Champions.Anivia
 import Champions.Annie
 import Champions.AurelionSol
+import Champions.Azir
 
 
 def give_stats_gui(champions):
@@ -145,7 +146,8 @@ def create_first_gui():
                                     "Ziggs",
                                     "Zilean", "Zoe", "Zyra"]
 
-    ap_champions_for_auto_entry = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir", "Brand",
+    ap_champions_for_auto_entry = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir"]
+    ap_champions_for_auto_entry_complete = ["Ahri", "Akali", "Anivia", "Annie", "AurelionSol", "Azir", "Brand",
                                    "Cassiopeia", "Diana", "Ekko", "Fizz", "Galio", "Heimerdinger",
                                    "Kassadin", "Katarina", "LeBlanc", "Lissandra", "Lux", "Malzahar", "Neeko",
                                    "Orianna", "Ryze", "Sylas", "Syndra", "TwistedFate", "Veigar", "Vel'Koz",
