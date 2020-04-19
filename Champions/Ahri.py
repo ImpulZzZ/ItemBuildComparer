@@ -1,20 +1,21 @@
 from Champions.Champion import Champion
 import Spell
 
+
 class Ahri(Champion):
 
     def __init__(self):
         Champion.__init__(self, "Ahri")
 
     def q_first_damage(self, ap, skillpoints):
-        skill_level = skillpoints-1
+        skill_level = skillpoints - 1
         base_damage = [40, 65, 90, 115, 140]
         scaling = 0.35
         amount = base_damage[skill_level] * scaling
         return Spell(2, amount, 0, 0)
 
     def q_first_damage_amplified_by_charm(self, ap, skillpoints):
-        skill_level = skillpoints-1
+        skill_level = skillpoints - 1
         base_damage = [40, 65, 90, 115, 140]
         scaling = 0.35
         amount = base_damage[skill_level] * scaling

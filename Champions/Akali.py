@@ -1,24 +1,25 @@
 from Champions.Champion import Champion
 import Spell
 
+
 class Akali(Champion):
 
     def __init__(self):
         Champion.__init__(self, "Akali")
 
-    def p_one_attack_bonus_damage(self, ap, bonus_ad, level):
+    def p_one_attack_bonus_damage(self, ap, bonus_ad):
         level_damage = [39, 42, 45, 48, 51, 54, 57, 60, 69, 78, 87, 96, 105, 120, 135, 150, 165, 180]
         ap_scaling = 0.50
         bonus_ad_scaling = 0.60
-        amount = level_damage[level] + (bonus_ad * bonus_ad_scaling) + (ap * ap_scaling)
+        amount = level_damage[self.level - 1] + (bonus_ad * bonus_ad_scaling) + (ap * ap_scaling)
         return Spell.Spell(2, amount, 0, 0)
 
-    def p_movement_speed_bonus(self, level):
-        if level < 6:
+    def p_movement_speed_bonus(self):
+        if self.level < 6:
             return 0.40
-        if level < 11:
+        if self.level < 11:
             return 0.50
-        if level < 16:
+        if self.level < 16:
             return 0.60
         else:
             return 0.70
@@ -33,7 +34,7 @@ class Akali(Champion):
 
     def w_movementspeed_bonus(self, skillrank):
         base_value = [0.30, 0.35, 0.40, 0.45, 0.50]
-        return base_value[skillrank-1]
+        return base_value[skillrank - 1]
 
     def e_first_damage(self, ad, ap, skillrank):
         skill_level = skillrank - 1

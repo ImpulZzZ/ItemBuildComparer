@@ -5,6 +5,7 @@ import Champions.Ahri
 import Champions.Akali
 import Champions.Anivia
 import Champions.Annie
+import Champions.AurelionSol
 
 
 def give_stats_gui(champions):
@@ -216,6 +217,7 @@ def create_first_gui():
 
 def main():
     create_first_gui()
+
 
 if __name__ == '__main__':
     main()

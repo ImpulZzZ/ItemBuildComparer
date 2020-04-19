@@ -1,6 +1,7 @@
 from Champions.Champion import Champion
 import Spell
 
+
 class Annie(Champion):
     def __init__(self):
         Champion.__init__(self, "Annie")
